@@ -12,7 +12,6 @@
 import re
 import os
 import shutil
-import subprocess
 import argparse
 
 # This is to help coaches and graders identify student assignments
@@ -54,6 +53,7 @@ def zip_to_file(paths, zippath):
     print(command)
     os.system(command)
 
+
 def main():
     # This snippet will help you get started with the argparse module.
     parser = argparse.ArgumentParser()
@@ -66,7 +66,8 @@ def main():
     # Read the docs and examples for the argparse module about how to do this.
     all_paths = get_spec_paths(args.fromdir)
     # Parsing command line arguments is a must-have skill.
-    # This is input data validation.  If something is wrong (or missing) with any
+    # This is input data validation.
+    # If something is wrong (or missing) with any
     # required args, the general rule is to print a usage message and exit(1).
 
     # +++your code here+++
@@ -78,6 +79,7 @@ def main():
     if not args.todir and not args.tozip:
         for file in all_paths:
             print(os.path.abspath(file))
+
 
 if __name__ == "__main__":
     main()
